@@ -7,7 +7,7 @@ pipeline {
     }
     stages
         { 
-            stage('hello')
+            stage('docker install')
             {
                 steps 
                 {
@@ -15,6 +15,13 @@ pipeline {
                     sh './Dockerinstall'
                 }
             }   
+            stage('deployee project in docker')
+            {
+                steps
+                {
+                    sh 'sudo docker build . -t project:hotel'
+                }    
+            }
         }   
    
 }
