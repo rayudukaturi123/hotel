@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git 'https://github.com/rayudukaturi123/CoronaApp.git'
+                git 'https://github.com/rayudukaturi123/hotel.git'
             }
         }
         stage('apache2 install'){
