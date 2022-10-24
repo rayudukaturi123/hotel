@@ -16,7 +16,7 @@ pipeline {
         }
         stage('deployee'){
             steps {
-                sh 'cp -r /home/ubuntu/workspace/new/hotelmanagement/* /var/www/html/'
+                sh 'sudo cp -r /home/ubuntu/workspace/new/hotelmanagement/* /var/www/html/'
             }
         }
         
