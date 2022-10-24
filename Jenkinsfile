@@ -14,6 +14,7 @@ pipeline {
                  sh 'sudo rm -rf /var/www/html/*'
              }
         }
+       
       
     }
 }
