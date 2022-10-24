@@ -14,7 +14,12 @@ pipeline {
                  sh 'sudo rm -rf /var/www/html/*'
              }
         }
-       
+        stage('deployee'){
+            steps {
+                sh 'cp -r /home/ubuntu/workspace/new/hotelmanagement/* /var/www/html/'
+            }
+        }
+        
       
     }
 }
