@@ -5,6 +5,15 @@ pipeline {
             label 'deployee'
         }
     }
-
+    stages
+        { 
+            stage('hello')
+            {
+                steps 
+                {
+                    sh 'ls'
+                }
+            }   
+        }   
    
 }
