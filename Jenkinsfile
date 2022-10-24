@@ -20,7 +20,7 @@ pipeline {
                 steps
                 {
                     sh 'sudo docker build . -t project:hotel'
-                    sh 'sudo docker run -d --name project1 -p 8085:80 project:hotel
+                    sh 'sudo docker run -d --name project1 -p 8085:80 project:hotel'
                 }    
             }
         }   
