@@ -11,7 +11,8 @@ pipeline {
             {
                 steps 
                 {
-                    sh 'ls'
+                    sh 'chmod +x /home/ubuntu/workspace/dockerproject/Dockerinstall'
+                    sh 'cd ./workspace/dockerproject/Dockerinstall'
                 }
             }   
         }   
