@@ -1,26 +1,15 @@
 pipeline {
-    agent 
-    {
-        node{
-            label 'deployee'
-        }
-    }
-    stages
-        { 
-            stage('docker install')
-            {
-                steps 
-                {
-                    sh 'chmod +x /home/ubuntu/workspace/dockerproject/Dockerinstall'
-                    sh './Dockerinstall'
-                }
-            }   
+    agent any
+       stages
+        {
             stage('deployee project in docker')
             {
                 steps
                 {
                     sh 'sudo docker build . -t project:hotel'
-                    sh 'sudo docker run -d --name project1 -p 8085:80 project:hotel'
+                     sh 'docker login -u rayudu1990 -p rayudukaturi@1990'
+                    sh 'sudo tag project:hotel rayudu1990/myproject:latest'
+                    sh 'sudo docker push rayudu1990/myproject:latest '
                 }    
             }
         }   
