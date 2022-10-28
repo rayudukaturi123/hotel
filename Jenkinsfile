@@ -15,7 +15,7 @@ pipeline {
              stage ('Deployment') {
             steps {
                 echo "Deployment"
-                sh 'kubectl apply -f demo.yaml'
+                sh 'kubectl apply -f deploy.yaml'
                 sh 'kubectl apply -f hotel-svc.yaml'
                 sh 'kubectl rollout restart deployment/httpd-deployment'
             }
