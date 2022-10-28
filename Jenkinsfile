@@ -11,6 +11,15 @@ pipeline {
                     sh 'sudo docker push rayudu1990/myproject:latest '
                 }    
             }
+            
+             stage ('Deployment') {
+            steps {
+                echo "Deployment"
+                sh 'kubectl apply -f demo.yaml'
+                sh 'kubectl apply -f hotel-svc.yaml'
+                sh 'kubectl rollout restart deployment/httpd-deployment'
+            }
+        }
         }   
    
 }
